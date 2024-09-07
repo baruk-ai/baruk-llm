@@ -33,20 +33,20 @@ export default {
       return "/onboarding/create-workspace";
     },
   },
-  github: () => {
-    return "https://github.com/Mintplex-Labs/anything-llm";
+  baruk: () => {
+    return "https://www.baruk.ai";
   },
   discord: () => {
     return "https://discord.com/invite/6UyHPeGZAC";
   },
   docs: () => {
-    return "https://docs.anythingllm.com";
+      return "https://docs.baruk.ai";
   },
-  mailToMintplex: () => {
-    return "mailto:team@mintplexlabs.com";
+  mailToBaruk: () => {
+    return "mailto:suporte@baruk.ai";
   },
   hosting: () => {
-    return "https://my.mintplexlabs.com/aio-checkout?product=anythingllm";
+      return "https://docs.baruk.ai";
   },
   workspace: {
     chat: (slug) => {
