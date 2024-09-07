@@ -2,8 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import { SpeakerHigh, PauseCircle, CircleNotch } from "@phosphor-icons/react";
 import { Tooltip } from "react-tooltip";
 import PiperTTSClient from "@/utils/piperTTS";
+import { useTranslation } from "react-i18next";
 
 export default function PiperTTS({ voiceId = null, message }) {
+  const { t } = useTranslation();
   const playerRef = useRef(null);
   const [speaking, setSpeaking] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -56,10 +58,10 @@ export default function PiperTTS({ voiceId = null, message }) {
         disabled={loading}
         data-tooltip-id="message-to-speech"
         data-tooltip-content={
-          speaking ? "Pause TTS speech of message" : "TTS Speak message"
+          speaking ? `${t("tts-speak.pause-message")}` : `${t("tts-speak.start-message")}`
         }
         className="border-none text-zinc-300"
-        aria-label={speaking ? "Pause speech" : "Speak message"}
+        aria-label={speaking ? `${t("tts-speak.pause-speech")}` : `${t("tts-speak.start-speech")}`}
       >
         {speaking ? (
           <PauseCircle size={18} className="mb-1" />

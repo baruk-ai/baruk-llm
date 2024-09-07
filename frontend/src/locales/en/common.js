@@ -13,6 +13,11 @@ const TRANSLATIONS = {
     signout: "Sign out",
     support: "Support",
     cancel: "Cancel",
+    clear: "Clear",
+    "save-submit": "Save & Submit",
+    copy: "Copy",
+    prompt: "Prompt",
+    response: "Response"
   },
 
   account: {
@@ -595,7 +600,7 @@ const TRANSLATIONS = {
     "default-agent": "the default agent for this workspace.",
     "custom-agents": "",
     "speak": "Speak",
-    "speak-tooltip": "Speak your prompt",
+    "speak-tooltip": "Speak your prompt"
   },
 
   "thread": {
@@ -605,6 +610,14 @@ const TRANSLATIONS = {
     "deleting": "Delete Selected",
     "loading": "loading threads..."
   },
+
+  "tts-speak": {
+    "pause-message": "Pause TTS speech of message",
+    "start-message": "TTS Speak message",
+    "pause-speech": "Pause speech",
+    "start-speech": "Speak message",
+    "failed-load-play-message": "Failed to load or play TTS message response."
+  }
 };
 
 export default TRANSLATIONS;

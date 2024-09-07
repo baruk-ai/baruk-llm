@@ -3,8 +3,10 @@ import { SpeakerHigh, PauseCircle, CircleNotch } from "@phosphor-icons/react";
 import { Tooltip } from "react-tooltip";
 import Workspace from "@/models/workspace";
 import showToast from "@/utils/toast";
+import { useTranslation } from "react-i18next";
 
 export default function AsyncTTSMessage({ slug, chatId }) {
+  const { t } = useTranslation();
   const playerRef = useRef(null);
   const [speaking, setSpeaking] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -22,7 +24,7 @@ export default function AsyncTTSMessage({ slug, chatId }) {
         Workspace.ttsMessage(slug, chatId)
           .then((audioBlob) => {
             if (!audioBlob)
-              throw new Error("Failed to load or play TTS message response.");
+              throw new Error(`${t("tts-speak.failed-load-play-message")}`);
             setAudioSrc(audioBlob);
           })
           .catch((e) => showToast(e.message, "error", { clear: true }))
@@ -59,10 +61,10 @@ export default function AsyncTTSMessage({ slug, chatId }) {
         onClick={speakMessage}
         data-tooltip-id="message-to-speech"
         data-tooltip-content={
-          speaking ? "Pause TTS speech of message" : "TTS Speak message"
+          speaking ? `${t("tts-speak.pause-message")}` : `${t("tts-speak.start-message")}`
         }
         className="border-none text-zinc-300"
-        aria-label={speaking ? "Pause speech" : "Speak message"}
+        aria-label={speaking ? `${t("tts-speak.pause-speech")}` : `${t("tts-speak.start-speech")}`}
       >
         {speaking ? (
           <PauseCircle size={18} className="mb-1" />

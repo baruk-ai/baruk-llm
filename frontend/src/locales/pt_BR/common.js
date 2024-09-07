@@ -15,6 +15,10 @@ const TRANSLATIONS = {
     support: "Suporte",
     cancel: "Cancelar",
     clear: "Limpar",
+    "save-submit": "Salvar e Enviar",
+    copy: "Copiar",
+    prompt: "Prompt",
+    response: "Responder"
   },
 
   account: {
@@ -611,13 +615,12 @@ const TRANSLATIONS = {
     "loading": "carregando chats..."
   },
 
-  "admin-user": {
-    username: "Username",
-    "username-placeholder": "User's username",
-    "username-description": "Username must be only contain lowercase letters, numbers, underscores, and hyphens with no spaces",
-    password: "Password",
-    "new-password": "New Password",
-    "password-placeholder": "'s new password"
+  "tts-speak": {
+    "tooltip-tts-pause-message": "Pausar a fala da mensagem",
+    "tooltip-tts-start-message": "Falar a mensagem",
+    "tooltip-tts-pause-speech": "Pausar discurso",
+    "tooltip-tts-start-speech": "Falar mensagem",
+    "failed-load-play-message": "Falha ao carregar ou reproduzir a resposta da mensagem."
   }
 };
 
