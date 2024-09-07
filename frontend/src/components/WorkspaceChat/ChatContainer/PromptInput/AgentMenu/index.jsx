@@ -4,16 +4,18 @@ import { At, Flask, X } from "@phosphor-icons/react";
 import ModalWrapper from "@/components/ModalWrapper";
 import { useModal } from "@/hooks/useModal";
 import { useIsAgentSessionActive } from "@/utils/chat/agent";
+import { useTranslation } from "react-i18next";
 
 export default function AvailableAgentsButton({ showing, setShowAgents }) {
+  const { t } = useTranslation();
   const agentSessionActive = useIsAgentSessionActive();
   if (agentSessionActive) return null;
   return (
     <div
       id="agent-list-btn"
       data-tooltip-id="tooltip-agent-list-btn"
-      data-tooltip-content="View all available agents you can use for chatting."
-      aria-label="View all available agents you can use for chatting."
+      data-tooltip-content={t("chat-history.agents-tooltip")}
+      aria-label={t("chat-history.agents-tooltip")}
       onClick={() => setShowAgents(!showing)}
       className={`flex justify-center items-center opacity-60 hover:opacity-100 cursor-pointer ${
         showing ? "!opacity-100" : ""
@@ -44,6 +46,7 @@ export function AvailableAgents({
   sendCommand,
   promptRef,
 }) {
+  const { t } = useTranslation();
   const formRef = useRef(null);
   const agentSessionActive = useIsAgentSessionActive();
   useEffect(() => {
@@ -80,16 +83,16 @@ export function AvailableAgents({
             >
               <div className="w-full flex-col text-left flex pointer-events-none">
                 <div className="text-white text-sm">
-                  <b>@agent</b> - the default agent for this workspace.
+                  <b>@agent</b> - {t("chat-history.default-agent")}
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <AbilityTag text="rag-search" />
-                  <AbilityTag text="web-scraping" />
-                  <AbilityTag text="web-browsing" />
-                  <AbilityTag text="save-file-to-browser" />
-                  <AbilityTag text="list-documents" />
-                  <AbilityTag text="summarize-document" />
-                  <AbilityTag text="chart-generation" />
+                  {/*<AbilityTag text="rag-search" />*/}
+                  {/*<AbilityTag text="web-scraping" />*/}
+                  {/*<AbilityTag text="web-browsing" />*/}
+                  {/*<AbilityTag text="save-file-to-browser" />*/}
+                  {/*<AbilityTag text="list-documents" />*/}
+                  {/*<AbilityTag text="summarize-document" />*/}
+                  {/*<AbilityTag text="chart-generation" />*/}
                 </div>
               </div>
             </button>
@@ -100,7 +103,7 @@ export function AvailableAgents({
             >
               <div className="w-full flex-col text-center flex pointer-events-none">
                 <div className="text-white text-xs text-white/50 italic">
-                  custom agents are coming soon!
+                   {t("chat-history.custom-agents")}
                 </div>
               </div>
             </button>
