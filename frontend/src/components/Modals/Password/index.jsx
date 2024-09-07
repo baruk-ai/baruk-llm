@@ -8,12 +8,12 @@ import {
   AUTH_TIMESTAMP,
 } from "../../../utils/constants";
 import useLogo from "../../../hooks/useLogo";
-import illustration from "@/media/illustrations/login-illustration.svg";
+import illustration from "@/media/illustrations/login-illustration.png";
 
 export default function PasswordModal({ mode = "single" }) {
   const { loginLogo } = useLogo();
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] h-full bg-[#25272C] flex flex-col md:flex-row items-center justify-center">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] h-full bg-[#FFFFFF] flex flex-col md:flex-row items-center justify-center">
       <div
         style={{
           background: `
