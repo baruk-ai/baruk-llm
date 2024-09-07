@@ -25,6 +25,7 @@ const TRANSLATIONS = {
     "new-password": "New Password",
     "password-placeholder": "'s new password",
     "password-description": "Password must be at least 8 characters long",
+    "initial-password-placeholder": "User's initial password",
     "preferred-language": "Preferred language",
     "profile-picture": "Profile Picture",
     "remove-profile-picture": "Remove Profile Picture",
