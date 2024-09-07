@@ -1,6 +1,6 @@
 const TRANSLATIONS = {
   common: {
-    chatindoc: "Chat inDoc",
+    "app-name": "Chat inDoc",
     "workspaces-name": "Nome do Workspace",
     error: "erro",
     success: "sucesso",
@@ -87,7 +87,7 @@ const TRANSLATIONS = {
       reset: "Redefinir",
     },
     "sign-in": {
-      start: "Faça login na sua",
+      start: "Faça login no ",
       end: "conta.",
     },
     "password-reset": {

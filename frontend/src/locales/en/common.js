@@ -1,5 +1,6 @@
 const TRANSLATIONS = {
   common: {
+    "app-name": "Chat inDoc",
     "workspaces-name": "Workspaces Name",
     error: "error",
     success: "success",

@@ -3,8 +3,10 @@ import LGroupImg from "./l_group.png";
 import RGroupImg from "./r_group.png";
 import AnythingLLMLogo from "@/media/logo/anything-llm.png";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function OnboardingHome() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <>
@@ -24,7 +26,7 @@ export default function OnboardingHome() {
             <p className="text-zinc-300 font-thin text-[24px]">Welcome to</p>
             <img
               src={AnythingLLMLogo}
-              alt="AnythingLLM"
+              alt={t("common.app-name")}
               className="md:h-[50px] flex-shrink-0 max-w-[300px]"
             />
             <button
