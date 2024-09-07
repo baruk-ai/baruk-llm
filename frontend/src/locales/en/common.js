@@ -9,6 +9,33 @@ const TRANSLATIONS = {
     save: "Save changes",
     previous: "Previous Page",
     next: "Next Page",
+    account: "Account",
+    signout: "Sign out",
+    support: "Support",
+    cancel: "Cancel",
+  },
+
+  account: {
+    "edit-label": "Edit Account",
+    "update-label": "Update Account",
+    username: "Username",
+    "username-placeholder": "User's username",
+    "username-description": "Username must be only contain lowercase letters, numbers, underscores, and hyphens with no spaces",
+    password: "Password",
+    "new-password": "New Password",
+    "password-placeholder": "'s new password",
+    "password-description": "Password must be at least 8 characters long",
+    "preferred-language": "Preferred language",
+    "profile-picture": "Profile Picture",
+    "remove-profile-picture": "Remove Profile Picture",
+    "add-user": "Add user",
+    "add-user-instance": "Add user to instance",
+    role: "Role",
+    "role-default": "Default",
+    "role-manager": "Manager",
+    "role-administrator": "Administrator",
+    "after-create-user-msg": "After creating a user they will need to login with their initial login to get access.",
+
   },
 
   // Setting Sidebar menu items.
@@ -488,6 +515,94 @@ const TRANSLATIONS = {
     embedding: "Embedding Preference",
     vector: "Vector Database",
     anonymous: "Anonymous Telemetry Enabled",
+  },
+
+  audio: {
+    speech_provider: {
+      title: "Speech-to-text Preference",
+      description:
+        "Here you can specify what kind of text-to-speech and speech-to-text providers you would want to use in your Chat inDoc experience. By default, we use the browser's built in support for these services, but you may want to use others.",
+      subtitle: "Provider",
+      disclaimer: "Não há configuração necessária para este provedor."
+    },
+    text_provider: {
+      title: "Preferência de conversão de texto em fala",
+      description:
+        "Aqui você pode especificar que tipo de provedores de texto para fala você gostaria de usar em sua experiência Chat inDoc. Por padrão, usamos o suporte integrado do navegador para esses serviços, mas você pode querer usar outros.",
+      subtitle: "Provider",
+      disclaimer: "Não há configuração necessária para este provedor."
+    },
+    saving: "Saving...",
+    savechanges: "Save changes",
+    search: "Search speech to text providers",
+    native_provider: "System native",
+    native_provider_description: "Uses your browser's built in STT service if supported.",
+    preferences_saving_error_msg: "Failed to save preferences",
+    preferences_saving_success_msg: "Speech-to-text preferences saved successfully."
+  },
+
+  "custom-site-settings": {
+    title: "Custom Site Settings",
+    description:
+      "Change the content of the browser tab for customization and branding.",
+    "tab-title": {
+      title: "Tab Title",
+      description: "Set a custom tab title when the app is open in a browser.",
+      placeholder: "Chat inDoc | Your LLM trained with documents"
+    },
+    "tab-favicon": {
+      title: "Tab Favicon",
+      description: "Define a url to an image to use for your favicon",
+      placeholder: "url to your image"
+    },
+  },
+
+  "language-preference": {
+    "display-language": "Display Language",
+    "description-language":
+      "Select the preferred language to render Chat inDoc's UI in, when applicable."
+  },
+
+  "custom-app": {
+    "title": "Custom App Name",
+    "description":
+      "Set a custom app name that is displayed on the login page."
+  },
+
+  "support-email": {
+    "title": "Support Email",
+    "description":
+      "Set the support email address that shows up in the user menu while logged into this instance.",
+    "placeholder": "suporte@baruk.ai"
+  },
+
+  "chat-history": {
+    "welcome": "Welcome to your new workspace.",
+    "send-msg": "Send a message",
+    "send-msg-tooltip": "Send prompt message to workspace",
+    "reset": "Clear chat",
+    "reset-tooltip": "Clear your chat history and begin a new chat",
+    "attach": "Attach",
+    "attach-tooltip": "Attach a file to this chat",
+    "add-new-preset": "Add New Preset",
+    "change-text-size": "Change text size",
+    "small-text-size": "Small",
+    "normal-text-size": "Normal",
+    "large-text-size": "Large",
+    "view-agents": "View all available agents you can use for chatting.",
+    "agents-tooltip": "View all available agents you can use for chatting.",
+    "default-agent": "the default agent for this workspace.",
+    "custom-agents": "",
+    "speak": "Speak",
+    "speak-tooltip": "Speak your prompt",
+  },
+
+  "thread": {
+    "title": "Thread",
+    "new": "New Thread",
+    "starting": "Starting Thread...",
+    "deleting": "Delete Selected",
+    "loading": "loading threads..."
   },
 };
 
