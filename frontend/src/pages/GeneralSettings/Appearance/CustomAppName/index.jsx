@@ -2,8 +2,10 @@ import Admin from "@/models/admin";
 import System from "@/models/system";
 import showToast from "@/utils/toast";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CustomAppName() {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [hasChanges, setHasChanges] = useState(false);
   const [customAppName, setCustomAppName] = useState("");
@@ -60,10 +62,10 @@ export default function CustomAppName() {
     <form className="mb-6" onSubmit={updateCustomAppName}>
       <div className="flex flex-col gap-y-1">
         <h2 className="text-base leading-6 font-bold text-white">
-          Custom App Name
+         {t("custom-app.title")}
         </h2>
         <p className="text-xs leading-[18px] font-base text-white/60">
-          Set a custom app name that is displayed on the login page.
+         {t("custom-app.description")}
         </p>
       </div>
       <div className="flex items-center gap-x-4">
@@ -71,7 +73,7 @@ export default function CustomAppName() {
           name="customAppName"
           type="text"
           className="bg-zinc-900 mt-3 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 max-w-[275px] placeholder:text-white/20"
-          placeholder="AnythingLLM"
+          placeholder={t("common.chatindoc")}
           required={true}
           autoComplete="off"
           onChange={handleChange}
@@ -83,7 +85,7 @@ export default function CustomAppName() {
             onClick={(e) => updateCustomAppName(e, "")}
             className="mt-4 text-white text-base font-medium hover:text-opacity-60"
           >
-            Clear
+            {t("common.clear")}
           </button>
         )}
       </div>
@@ -92,7 +94,7 @@ export default function CustomAppName() {
           type="submit"
           className="transition-all mt-6 w-fit duration-300 border border-slate-200 px-5 py-2.5 rounded-lg text-white text-sm items-center flex gap-x-2 hover:bg-slate-200 hover:text-slate-800 focus:ring-gray-800"
         >
-          Save
+          {t("common.save")}
         </button>
       )}
     </form>
