@@ -1,9 +1,9 @@
 {
-  "name": "anything-llm-server",
+  "name": "baruk-llm-server",
   "version": "0.2.0",
   "description": "Server endpoints to process or create content for chatting",
   "main": "index.js",
-  "author": "Timothy Carambat (Mintplex Labs)",
+  "author": "Baruk Automação Inteligente",
   "license": "MIT",
   "private": false,
   "engines": {
