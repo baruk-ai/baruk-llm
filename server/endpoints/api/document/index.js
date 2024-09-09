@@ -136,7 +136,7 @@ function apiDocumentEndpoints(app) {
             schema: {
               type: 'object',
               example: {
-                "link": "https://anythingllm.com"
+                "link": "https://www.baruk.ai"
               }
             }
           }

@@ -20,7 +20,7 @@ const webScraping = {
           examples: [
             {
               prompt: "What is anythingllm.com about?",
-              call: JSON.stringify({ url: "https://anythingllm.com" }),
+              call: JSON.stringify({ url: "https://www.baruk.ai" }),
             },
             {
               prompt: "Scrape https://example.com",
