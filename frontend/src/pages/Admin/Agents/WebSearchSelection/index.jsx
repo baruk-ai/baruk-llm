@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Admin from "@/models/admin";
 import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
 import GoogleSearchIcon from "./icons/google.png";
 import SearchApiIcon from "./icons/searchapi.png";
@@ -6,6 +7,7 @@ import SerperDotDevIcon from "./icons/serper.png";
 import BingSearchIcon from "./icons/bing.png";
 import SerplySearchIcon from "./icons/serply.png";
 import SearXNGSearchIcon from "./icons/searxng.png";
+import TavilySearchIcon from "./icons/tavily.svg";
 import {
   CaretUpDown,
   MagnifyingGlass,
@@ -21,6 +23,7 @@ import {
   BingSearchOptions,
   SerplySearchOptions,
   SearXNGOptions,
+  TavilySearchOptions,
 } from "./SearchProviderOptions";
 
 const SEARCH_PROVIDERS = [
@@ -80,6 +83,14 @@ const SEARCH_PROVIDERS = [
     description:
       "Free, open-source, internet meta-search engine with no tracking.",
   },
+  {
+    name: "Tavily Search",
+    value: "tavily-search",
+    logo: TavilySearchIcon,
+    options: (settings) => <TavilySearchOptions settings={settings} />,
+    description:
+      "Tavily Search API. Offers a free tier with 1000 queries per month.",
+  },
 ];
 
 export default function AgentWebSearchSelection({
@@ -119,8 +130,12 @@ export default function AgentWebSearchSelection({
   }, [searchQuery, selectedProvider]);
 
   useEffect(() => {
-    setSelectedProvider(settings?.preferences?.agent_search_provider ?? "none");
-  }, [settings?.preferences?.agent_search_provider]);
+    Admin.systemPreferencesByFields(["agent_search_provider"])
+      .then((res) =>
+        setSelectedProvider(res?.settings?.agent_search_provider ?? "none")
+      )
+      .catch(() => setSelectedProvider("none"));
+  }, []);
 
   const selectedSearchProviderObject = SEARCH_PROVIDERS.find(
     (provider) => provider.value === selectedProvider

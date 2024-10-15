@@ -15,6 +15,23 @@ function isNullOrNaN(value) {
 
 const SystemSettings = {
   protectedFields: ["multi_user_mode"],
+  publicFields: [
+    "limit_user_messages",
+    "message_limit",
+    "footer_data",
+    "support_email",
+    "text_splitter_chunk_size",
+    "text_splitter_chunk_overlap",
+    "max_embed_chunk_size",
+    "agent_search_provider",
+    "agent_sql_connections",
+    "default_agent_skills",
+    "imported_agent_skills",
+    "custom_app_name",
+    "feature_flags",
+    "meta_page_title",
+    "meta_page_favicon",
+  ],
   supportedFields: [
     "limit_user_messages",
     "message_limit",
@@ -86,6 +103,7 @@ const SystemSettings = {
             "bing-search",
             "serply-engine",
             "searxng-engine",
+            "tavily-search",
           ].includes(update)
         )
           throw new Error("Invalid SERP provider.");
@@ -225,6 +243,7 @@ const SystemSettings = {
       AgentBingSearchApiKey: !!process.env.AGENT_BING_SEARCH_API_KEY || null,
       AgentSerplyApiKey: !!process.env.AGENT_SERPLY_API_KEY || null,
       AgentSearXNGApiUrl: process.env.AGENT_SEARXNG_API_URL || null,
+      AgentTavilyApiKey: !!process.env.AGENT_TAVILY_API_KEY || null,
     };
   },
 
@@ -424,6 +443,10 @@ const SystemSettings = {
       TogetherAiApiKey: !!process.env.TOGETHER_AI_API_KEY,
       TogetherAiModelPref: process.env.TOGETHER_AI_MODEL_PREF,
 
+      // Fireworks AI API Keys
+      FireworksAiLLMApiKey: !!process.env.FIREWORKS_AI_LLM_API_KEY,
+      FireworksAiLLMModelPref: process.env.FIREWORKS_AI_LLM_MODEL_PREF,
+
       // Perplexity AI Keys
       PerplexityApiKey: !!process.env.PERPLEXITY_API_KEY,
       PerplexityModelPref: process.env.PERPLEXITY_MODEL_PREF,
@@ -485,6 +508,10 @@ const SystemSettings = {
 
       // VoyageAi API Keys
       VoyageAiApiKey: !!process.env.VOYAGEAI_API_KEY,
+
+      // DeepSeek API Keys
+      DeepSeekApiKey: !!process.env.DEEPSEEK_API_KEY,
+      DeepSeekModelPref: process.env.DEEPSEEK_MODEL_PREF,
     };
   },
 
