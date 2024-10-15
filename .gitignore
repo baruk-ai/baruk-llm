@@ -9,3 +9,6 @@ v-env
 aws_cf_deploy_anything_llm.json
 yarn.lock
 *.bak
+/.vs/Baruk.ChatInDoc.Projects/FileContentIndex
+/.vs/Baruk.ChatInDoc.Projects/v17
+/.vs
